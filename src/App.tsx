@@ -1,23 +1,25 @@
 import React from 'react';
-import { TodoListItem } from "./TodoListItem";
-
-const todos: Todo[] = [
-  {
-    text: 'Wynieść śmieci',
-    complete: true
-  },
-  {
-    text: 'Nauczyć się Reacta by Kamil',
-    complete: false
-  }
-];
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  return(
-      <ul>
-        <TodoListItem todo={todos[0]} />
-        <TodoListItem todo={todos[1]} />
-      </ul>
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
