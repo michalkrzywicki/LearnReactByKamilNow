@@ -1,4 +1,4 @@
-interface Todo {
+export interface Todo {
     text: string;
     complete: boolean;
 }
