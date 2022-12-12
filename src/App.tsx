@@ -1,6 +1,8 @@
 import React from 'react';
 import { TodoListItem } from "./TodoListItem";
 
+import { Todo } from './types';
+
 const todos: Todo[] = [
   {
     text: 'Wynieść śmieci',
@@ -15,8 +17,7 @@ const todos: Todo[] = [
 function App() {
   return(
       <ul>
-        <TodoListItem todo={todos[0]} />
-        <TodoListItem todo={todos[1]} />
+          {todos.map((data) => <TodoListItem todo={data} />)}
       </ul>
   );
 }
