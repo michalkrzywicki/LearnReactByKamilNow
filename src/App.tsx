@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { TodoListItem } from "./TodoListItem";
 
 import { Todo } from './types';
 
-const todos: Todo[] = [
+const initialTodos: Todo[] = [
   {
     text: 'Wynieść śmieci',
     complete: true
@@ -15,9 +15,23 @@ const todos: Todo[] = [
 ];
 
 function App() {
+  const [todos, setTodos] = useState(initialTodos);
+
+  const toggleTodo = (selectedTodo: Todo) => {
+    const newTodos = todos.map((todo) => {
+      if (todo === selectedTodo) {
+        return {
+          ...todo,
+          complete: !todo.complete,
+        };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  }
   return(
       <ul>
-          {todos.map((data) => <TodoListItem todo={data} />)}
+          {todos.map((data) => <TodoListItem todo={data} toggleTodo={toggleTodo} />)}
       </ul>
   );
 }
