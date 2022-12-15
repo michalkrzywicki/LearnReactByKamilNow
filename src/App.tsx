@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import { TodoListItem } from "./TodoListItem";
-
 import { Todo } from './types';
+import { TodoList } from "./TodoList";
 
 const initialTodos: Todo[] = [
   {
@@ -29,11 +28,7 @@ function App() {
     });
     setTodos(newTodos);
   }
-  return(
-      <ul>
-          {todos.map((data) => <TodoListItem todo={data} toggleTodo={toggleTodo} />)}
-      </ul>
-  );
+  return <TodoList todos={todos} toggleTodo={toggleTodo} />;
 }
 
 export default App;
