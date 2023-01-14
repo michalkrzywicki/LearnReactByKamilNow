@@ -1,5 +1,6 @@
 import React from "react";
 import { Todo, ToggleTodo } from './types';
+import { Button } from "./Button";
 
 interface Props {
     todo: Todo;
@@ -18,6 +19,8 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
                 }}
             />{' '}
             {todo.text}
+            <Button name="Edytuj" buttonType='edit'/>
+            <Button name="Usuń" buttonType='delete'/>
         </label>
     </li>
   );
