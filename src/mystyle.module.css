@@ -1,0 +1,20 @@
+.nextToButton {
+  display: inline;
+  padding-left: 0.3em;
+}
+
+.editButton {
+  background-color: #86ef8c;
+  height: 2em;
+  width: 3.7em;
+  padding: 5px;
+  text-anchor: middle;
+}
+
+.deleteButton {
+  background-color: #e75d5d;
+  height: 2em;
+  width: 3.5em;
+  padding: 5px;
+  text-anchor: middle;
+}
