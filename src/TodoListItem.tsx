@@ -1,6 +1,7 @@
 import React from "react";
 import { Todo, ToggleTodo } from './types';
 import { Button } from "./Button";
+import Checkbox from '@mui/material/Checkbox';
 
 interface Props {
     todo: Todo;
@@ -9,19 +10,28 @@ interface Props {
 
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
   return(
-    <li>
-        <label style={{ textDecoration: todo.complete ? 'line-through' : undefined }}>
-            <input
-                type="checkbox"
-                checked={todo.complete}
-                onClick={() => {
-                    toggleTodo(todo);
-                }}
-            />{' '}
+    <table>
+      <tr>
+        <td>
+          <Checkbox
+            checked={todo.complete}
+            onClick={() => {
+                toggleTodo(todo);
+            }}
+          />
+        </td>
+        <td>
+          <label style={{ textDecoration: todo.complete ? 'line-through' : undefined }}>
             {todo.text}
-            <Button name="Edytuj" buttonType='edit'/>
-            <Button name="Usuń" buttonType='delete'/>
-        </label>
-    </li>
+          </label>
+        </td>
+        <td>
+          <Button name="Edytuj" buttonType='edit'/>
+        </td>
+        <td>
+          <Button name="Usuń" buttonType='delete'/>
+        </td>
+      </tr>
+    </table>
   );
 };
