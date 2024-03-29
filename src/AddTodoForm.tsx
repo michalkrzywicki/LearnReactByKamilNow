@@ -36,7 +36,7 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
               setText('');
           }}
         >
-          Add Todo
+          Add Todo Item.
         </Button>
       </div>
     </Box>
