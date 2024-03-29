@@ -21,7 +21,7 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
     >
       <div>
         <TextField
-          label="List Item"
+          label="List Item in List"
           value={text}
           onChange={(e) => {
             setText(e.target.value);
